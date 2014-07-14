@@ -18,22 +18,28 @@ By default, the StrategyLayoutResolutor is based on Strategy pattern and the use
 
 There is an special implementation of LayoutBuilder, the XmlLayoutBuilder is to read XMLs configuration files such as:
 
+```xml
+<?xml version="1.0" encoding="utf-8"?>
 <layout name="Default">
     <holder width="40.0" height="100.0"></holder>
 </layout>
+```xml
 
 These files must be located into the res/xml.. folder in the project. The advantage is that the design of a layout may vary if the screen is on portrait or landscape. 
 
 The user can adapt the xml files by adding any other attribute by extending the XmlLayoutBuilder to its purposes:
 
+```xml
+<?xml version="1.0" encoding="utf-8"?>
 <layout name="MyLayout">
     <holder width="40.0" height="100.0" type="TYPEA"></holder>
 	<holder width="40.0" height="100.0" type="TYPEB"></holder>
 </layout>
+```xml
 
 In the above example, the MyLayout is going to be used if the next two items in the data model are the TYPEA and TYPEB. The only methods to be modified should be "buildLayout" and "appendElement":
  
-
+```
 public class MyXmlLayoutBuilder extends XmlLayoutBuilder {
 
 	private static final String TYPE_ATTR = "type";
@@ -69,9 +75,11 @@ public class MyXmlLayoutBuilder extends XmlLayoutBuilder {
 		}
 	}
 }
+```
 
 This type attribute is not in the LayoutItem class supplied in this framework, it has be extended:
 
+```
 private class MyLayout extends Layout {
 	private String type;
 	
@@ -95,6 +103,6 @@ private class MyLayout extends Layout {
 		return isFor;
 	}
 }
-
+```
 
 All this info can be found in the sample project.
