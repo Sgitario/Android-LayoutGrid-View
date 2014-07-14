@@ -106,3 +106,5 @@ private class MyLayout extends Layout {
 ```
 
 All this info can be found in the sample project.
+
+See more in http://www.josecarvajalhilario.co/2014/07/layoutgridview-widget-for-android.html.
