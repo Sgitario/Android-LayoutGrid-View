@@ -18,7 +18,6 @@ By default, the StrategyLayoutResolutor is based on Strategy pattern and the use
 
 There is an special implementation of LayoutBuilder, the XmlLayoutBuilder is to read XMLs configuration files such as:
 
-<?xml version="1.0" encoding="utf-8"?>
 <layout name="Default">
     <holder width="40.0" height="100.0"></holder>
 </layout>
@@ -27,7 +26,6 @@ These files must be located into the res/xml.. folder in the project. The advant
 
 The user can adapt the xml files by adding any other attribute by extending the XmlLayoutBuilder to its purposes:
 
-<?xml version="1.0" encoding="utf-8"?>
 <layout name="MyLayout">
     <holder width="40.0" height="100.0" type="TYPEA"></holder>
 	<holder width="40.0" height="100.0" type="TYPEB"></holder>
