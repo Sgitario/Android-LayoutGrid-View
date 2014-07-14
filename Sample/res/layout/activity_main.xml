@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+    <Button android:text="@string/simpleOption"
+        android:id="@+id/simpleOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    
+    <Button android:text="@string/xmlOption"
+        android:id="@+id/xmlOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    
+    <Button android:text="@string/manyXmlOption"
+        android:id="@+id/manyXmlOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>   
+</LinearLayout>
+

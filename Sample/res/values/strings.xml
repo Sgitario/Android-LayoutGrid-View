@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LayoutGridViewSample</string>
+    <string name="title">Hello Layout Grid!</string>
+    <string name="action_settings">Settings</string>
+    <string name="imageDescription">Image Description</string>
+    <string name="simpleOption">Simple example</string>
+    <string name="xmlOption">Xml example</string>
+    <string name="manyXmlOption">Custom strategy with several Xmls</string>
+
+</resources>

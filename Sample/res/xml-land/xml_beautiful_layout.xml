@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout name="Default">
+    <holder width="66.0" height="65.0" ></holder>
+    <holder width="33.0" height="65.0" ></holder>
+    <holder width="33.0" height="35.0" ></holder>
+    <holder width="33.0" height="35.0" ></holder>
+    <holder width="33.0" height="35.0" ></holder>
+</layout>
