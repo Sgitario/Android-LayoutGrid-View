@@ -23,7 +23,7 @@ There is an special implementation of LayoutBuilder, the XmlLayoutBuilder is to 
 <layout name="Default">
     <holder width="40.0" height="100.0"></holder>
 </layout>
-```xml
+```
 
 These files must be located into the res/xml.. folder in the project. The advantage is that the design of a layout may vary if the screen is on portrait or landscape. 
 
@@ -35,7 +35,7 @@ The user can adapt the xml files by adding any other attribute by extending the 
     <holder width="40.0" height="100.0" type="TYPEA"></holder>
 	<holder width="40.0" height="100.0" type="TYPEB"></holder>
 </layout>
-```xml
+```
 
 In the above example, the MyLayout is going to be used if the next two items in the data model are the TYPEA and TYPEB. The only methods to be modified should be "buildLayout" and "appendElement":
  
