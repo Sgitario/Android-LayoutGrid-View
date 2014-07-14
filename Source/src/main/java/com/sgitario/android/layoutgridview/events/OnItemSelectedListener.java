@@ -18,11 +18,8 @@ public interface OnItemSelectedListener {
 	 * 
 	 * Impelmenters can call getItemAtPosition(position) if they need to
 	 * access the data associated with the selected item.
-	 * 
-	 * @param parent
-	 *            The AdapterView where the selection happened
 	 * @param proxy
-	 *            The FreeFlowItem instance representing the item selected
+	 *            The LayoutItem instance representing the item selected
 	 * @param id
 	 *            The row id of the item that is selected
 	 */

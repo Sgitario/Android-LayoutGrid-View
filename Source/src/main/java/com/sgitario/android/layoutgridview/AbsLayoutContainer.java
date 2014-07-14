@@ -219,11 +219,11 @@ public abstract class AbsLayoutContainer extends ViewGroup {
 			return;
 		}
 
-		LayoutItem freeflowItem = Utils.getLayoutItemForItem(getLayoutItems(), getAdapter().getItem(itemIndex));
-		freeflowItem = LayoutItem.clone(freeflowItem);
+		LayoutItem layoutItem = Utils.getLayoutItemForItem(getLayoutItems(), getAdapter().getItem(itemIndex));
+		layoutItem = LayoutItem.clone(layoutItem);
 
-		int newVPX = freeflowItem.frame.left;
-		int newVPY = freeflowItem.frame.top;
+		int newVPX = layoutItem.frame.left;
+		int newVPY = layoutItem.frame.top;
 
 		if (newVPX > getLayout().getContentWidth() - getMeasuredWidth())
 			newVPX = getLayout().getContentWidth() - getMeasuredWidth();

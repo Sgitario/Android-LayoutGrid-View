@@ -22,7 +22,7 @@ public class Utils {
 	}
 	
 	/**
-     * Returns the FreeFlowItem instance of a view at position if that
+     * Returns the LayoutItem instance of a view at position if that
      * view is visible or null if thats not currently visible
      * @param	position	The position of the item in the particular section
      * @return	The <code>LayoutItem</code> instance representing that section and index. The proxy is guaranteed to have a view associated with it 

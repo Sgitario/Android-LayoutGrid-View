@@ -133,31 +133,31 @@ public class LayoutGridView extends AbsLayoutContainer {
 	 * ViewPool, we dont need to construct a new instance, else we will based on
 	 * the View class returned by the <code>Adapter</code>
 	 * 
-	 * @param freeflowItem
-	 *            <code>FreeFlowItem</code> instance that determines the View
+	 * @param layoutItem
+	 *            <code>LayoutItem</code> instance that determines the View
 	 *            being positioned
 	 */
-	protected void addAndMeasureViewIfNeeded(LayoutItem freeflowItem) {
+	protected void addAndMeasureViewIfNeeded(LayoutItem layoutItem) {
 		View view;
-		if (freeflowItem.view == null) {
+		if (layoutItem.view == null) {
 
-			view = getAdapter().getView(freeflowItem.itemIndex, viewpool.get(), this);
+			view = getAdapter().getView(layoutItem.itemIndex, viewpool.get(), this);
 
 			if (view instanceof LayoutGridView)
 				throw new IllegalStateException(
 						"A container cannot be a direct child view to a container");
 
-			freeflowItem.view = view;
-			prepareViewForAddition(view, freeflowItem);
+			layoutItem.view = view;
+			prepareViewForAddition(view, layoutItem);
 			addView(view, getChildCount(), params);
 		}
 
-		view = freeflowItem.view;
+		view = layoutItem.view;
 
-		int widthSpec = MeasureSpec.makeMeasureSpec(freeflowItem.frame.width(),
+		int widthSpec = MeasureSpec.makeMeasureSpec(layoutItem.frame.width(),
 				MeasureSpec.EXACTLY);
 		int heightSpec = MeasureSpec.makeMeasureSpec(
-				freeflowItem.frame.height(), MeasureSpec.EXACTLY);
+				layoutItem.frame.height(), MeasureSpec.EXACTLY);
 		view.measure(widthSpec, heightSpec);
 	}
 
@@ -166,13 +166,13 @@ public class LayoutGridView extends AbsLayoutContainer {
 	 * 
 	 * @param view
 	 *            The View that will be added to the Container
-	 * @param freeflowItem
-	 *            The <code>FreeFlowItem</code> instance that represents the
+	 * @param layoutItem
+	 *            The <code>LayoutItem</code> instance that represents the
 	 *            view that will be positioned
 	 */
-	protected void prepareViewForAddition(View view, LayoutItem freeflowItem) {
+	protected void prepareViewForAddition(View view, LayoutItem layoutItem) {
 		if (view instanceof Checkable) {
-			((Checkable) view).setChecked(isChecked(freeflowItem.itemIndex));
+			((Checkable) view).setChecked(isChecked(layoutItem.itemIndex));
 		}
 	}
 
@@ -182,9 +182,9 @@ public class LayoutGridView extends AbsLayoutContainer {
 
 	}
 
-	protected void doLayout(LayoutItem freeflowItem) {
-		View view = freeflowItem.view;
-		Rect frame = freeflowItem.frame;
+	protected void doLayout(LayoutItem layoutItem) {
+		View view = layoutItem.view;
+		Rect frame = layoutItem.frame;
 		int l = frame.left - viewPortX;
 		int t = frame.top - viewPortY;
 		int r = frame.right - viewPortX;
@@ -198,7 +198,6 @@ public class LayoutGridView extends AbsLayoutContainer {
 	 * applied, this causes the views to animate to the new layout positions.
 	 * Scroll positions will also be reset.
 	 * 
-	 * @see FreeFlowLayout
 	 * @param newLayout
 	 */
 	public void setLayout(LayoutResolutor newLayout) {
@@ -245,7 +244,7 @@ public class LayoutGridView extends AbsLayoutContainer {
 	}
 
 	/**
-	 * Returns the actual frame for a view as its on stage. The FreeFlowItem's
+	 * Returns the actual frame for a view as its on stage. The LayoutItem's
 	 * frame object always represents the position it wants to be in but actual
 	 * frame may be different based on animation etc.
 	 * 
