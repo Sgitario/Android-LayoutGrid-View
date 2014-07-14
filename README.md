@@ -1,7 +1,7 @@
 LayoutGridView
 ==============
 
-Android control enables to visualize data in a grid layouts such as the GridView widget in Android native. 
+This widget to visualize data in a grid layouts such as the GridView widget in Android native. 
 
 The LayoutGridView widget enables:
 
