@@ -248,12 +248,12 @@ public class LayoutGridView extends AbsLayoutContainer {
 	 * frame object always represents the position it wants to be in but actual
 	 * frame may be different based on animation etc.
 	 * 
-	 * @param freeflowItem
-	 *            The freeflowItem to get the <code>Frame</code> for
-	 * @return The Frame for the freeflowItem or null if that view doesn't exist
+	 * @param layoutItem
+	 *            The LayoutItem's to get the <code>Frame</code> for
+	 * @return The Frame for the LayoutItem's or null if that view doesn't exist
 	 */
-	public Rect getActualFrame(final LayoutItem freeflowItem) {
-		View v = freeflowItem.view;
+	public Rect getActualFrame(final LayoutItem layoutItem) {
+		View v = layoutItem.view;
 		if (v == null) {
 			return null;
 		}
@@ -267,7 +267,7 @@ public class LayoutGridView extends AbsLayoutContainer {
 		return of;
 	}
 	
-	public Collection<LayoutItem> getDisplayedFreeFlowItems() {		
+	public Collection<LayoutItem> getDisplayedLayoutItems() {		
 		return this.mDataDisplayed;
 	}
 
@@ -294,9 +294,9 @@ public class LayoutGridView extends AbsLayoutContainer {
 				
 				if (Rect.intersects(item.frame, viewport)) {
 					mDataDisplayed.add(item);
-					drawFreeFlowItem(item, true);
+					drawLayoutItem(item, true);
 				} else {
-					hideFreeFlowItem(item);
+					hideLayoutItem(item);
 				}
 			}
 		}
@@ -314,7 +314,7 @@ public class LayoutGridView extends AbsLayoutContainer {
 
 	}
 	
-	private void drawFreeFlowItem(LayoutItem item, boolean withVisibility) {
+	private void drawLayoutItem(LayoutItem item, boolean withVisibility) {
 		addAndMeasureViewIfNeeded(item);
 		doLayout(item);
 		
@@ -323,7 +323,7 @@ public class LayoutGridView extends AbsLayoutContainer {
 		}
 	}
 	
-	private void hideFreeFlowItem(LayoutItem item) {		
+	private void hideLayoutItem(LayoutItem item) {		
 		if (item.view != null) {
 			item.view.setVisibility(View.GONE);
 			removeView(item.view);
@@ -331,9 +331,9 @@ public class LayoutGridView extends AbsLayoutContainer {
 		}
 	}
 
-	protected void returnItemToPoolIfNeeded(LayoutItem freeflowItem) {
-		viewpool.recycle(freeflowItem.view);
-		freeflowItem.view = null;
+	protected void returnItemToPoolIfNeeded(LayoutItem layoutItem) {
+		viewpool.recycle(layoutItem.view);
+		layoutItem.view = null;
 	}
 
 	public void clearFrames() {
